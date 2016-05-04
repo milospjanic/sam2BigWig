@@ -1,7 +1,5 @@
 # sam2BigWig
 
-# bam2bigwig
-
 This script will take a sam file **mapped to the human genome hg19** and convert it to a bigwig file that could be loaded to UCSC Genome Browser. It depends on samtools, then bedtools bamtobed (aka bamToBed), and it will attempt to download and execute three UCSC scripts, bedItemOverlapCount, bedGraphToBigWig and fetchChromSizes, so make sure your connection is working.
 
 # Usage
