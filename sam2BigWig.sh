@@ -1,10 +1,10 @@
 #! /bin/bash
 
 #create bam
-samtools view -Sb  $1 > $(basemname $1 .sam).bam
+samtools view -Sb  $1 > $(basename $1 .sam).bam
 
 #create bed from bam, requires bedtools bamToBed
-bamToBed -i $(basemname $1 .sam).bam -split > accepted_hits.bed
+bamToBed -i $(basename $1 .sam).bam -split > accepted_hits.bed
 
 #download bedItemOverlapCount
 wget http://hgdownload.soe.ucsc.edu/admin/exe/linux.x86_64/bedItemOverlapCount
@@ -23,7 +23,7 @@ wget http://hgdownload.soe.ucsc.edu/admin/exe/linux.x86_64/bedGraphToBigWig
 chmod 755 bedGraphToBigWig
 
 #create plus and minus strand bigwig
-./bedGraphToBigWig accepted_hits.bedGraph hg19.chrom.sizes $(basemname $1 .sam).bw
+./bedGraphToBigWig accepted_hits.bedGraph hg19.chrom.sizes $(basename $1 .sam).bw
 
 #removing intermediery files
 rm accepted_hits.bed
