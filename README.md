@@ -6,7 +6,7 @@ This script will take a sam file **mapped to the human genome hg19** and convert
 
 <pre>
 chmod 775 sam2bigwig
-./sam2bigwig file.bam
+./sam2bigwig file.sam
 </pre>
 
 Note the sam file name is an example, add your file name.
@@ -14,19 +14,20 @@ Note the sam file name is an example, add your file name.
 # Example output
 
 <pre>
-**./sam2bigwig.sh HCASMC_2989_6hr_SF.accepted_hits.sort.coord.bam**
---2016-04-14 09:42:38--  http://hgdownload.soe.ucsc.edu/admin/exe/linux.x86_64/bedItemOverlapCount
+./sam2BigWig.sh Aligned.out.sam
+
+--2016-05-04 13:43:38--  http://hgdownload.soe.ucsc.edu/admin/exe/linux.x86_64/bedItemOverlapCount
 Resolving hgdownload.soe.ucsc.edu (hgdownload.soe.ucsc.edu)... 128.114.119.163
 Connecting to hgdownload.soe.ucsc.edu (hgdownload.soe.ucsc.edu)|128.114.119.163|:80... connected.
 HTTP request sent, awaiting response... 200 OK
-Length: 15593081 (15M) [text/plain]
+Length: 15594359 (15M) [text/plain]
 Saving to: ‘bedItemOverlapCount’
 
-100%[=======================================================================================================================================================>] 15,593,081  31.1MB/s   in 0.5s
+100%[=======================================================================================================================================================>] 15,594,359  35.1MB/s   in 0.4s 
 
-2016-04-14 09:42:38 (31.1 MB/s) - ‘bedItemOverlapCount’ saved [15593081/15593081]
+2016-05-04 13:43:39 (35.1 MB/s) - ‘bedItemOverlapCount’ saved [15594359/15594359]
 
---2016-04-14 09:42:38--  http://hgdownload.soe.ucsc.edu/admin/exe/linux.x86_64/fetchChromSizes
+--2016-05-04 13:43:39--  http://hgdownload.soe.ucsc.edu/admin/exe/linux.x86_64/fetchChromSizes
 Resolving hgdownload.soe.ucsc.edu (hgdownload.soe.ucsc.edu)... 128.114.119.163
 Connecting to hgdownload.soe.ucsc.edu (hgdownload.soe.ucsc.edu)|128.114.119.163|:80... connected.
 HTTP request sent, awaiting response... 200 OK
@@ -35,23 +36,19 @@ Saving to: ‘fetchChromSizes’
 
 100%[=======================================================================================================================================================>] 2,793       --.-K/s   in 0s
 
-2016-04-14 09:42:38 (139 MB/s) - ‘fetchChromSizes’ saved [2793/2793]
+2016-05-04 13:43:39 (119 MB/s) - ‘fetchChromSizes’ saved [2793/2793]
 
 INFO: trying WGET /usr/bin/wget for database hg19
 url: http://hgdownload.cse.ucsc.edu/goldenPath/hg19/bigZips/hg19.chrom.sizes
---2016-04-14 09:49:04--  http://hgdownload.soe.ucsc.edu/admin/exe/linux.x86_64/bedGraphToBigWig
+--2016-05-04 14:48:49--  http://hgdownload.soe.ucsc.edu/admin/exe/linux.x86_64/bedGraphToBigWig
 Resolving hgdownload.soe.ucsc.edu (hgdownload.soe.ucsc.edu)... 128.114.119.163
 Connecting to hgdownload.soe.ucsc.edu (hgdownload.soe.ucsc.edu)|128.114.119.163|:80... connected.
 HTTP request sent, awaiting response... 200 OK
 Length: 3831823 (3.7M) [text/plain]
 Saving to: ‘bedGraphToBigWig’
 
-100%[=======================================================================================================================================================>] 3,831,823   24.0MB/s   in 0.2s
+100%[=======================================================================================================================================================>] 3,831,823   --.-K/s   in 0.1s  
 
-2016-04-14 09:49:04 (24.0 MB/s) - ‘bedGraphToBigWig’ saved [3831823/3831823]
-
-**ls -lh HCASMC_2989_6hr_SF.accepted_hits.sort.coord***
--rw-r--r-- 1 mpjanic mpjanic 1.8G May 27  2015 HCASMC_2989_6hr_SF.accepted_hits.sort.coord.bam
--rw-rw-r-- 1 mpjanic mpjanic  75M Apr 14 09:49 HCASMC_2989_6hr_SF.accepted_hits.sort.coord.bam.bw
+2016-05-04 14:48:49 (33.6 MB/s) - ‘bedGraphToBigWig’ saved [3831823/3831823]
 
 </pre>
